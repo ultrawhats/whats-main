@@ -1,8 +1,6 @@
 const rules = {
 	user: {
-		static: [
-			"tickets-manager:showall",
-		],
+		static: [],
 	},
 
 	admin: {
