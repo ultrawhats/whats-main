@@ -181,8 +181,8 @@ const TicketsList = (props) => {
     tags: JSON.stringify(tags),
     queueIds: JSON.stringify(selectedQueueIds),
   });
-/*
-	useEffect(() => {
+
+   useEffect(() => {
 		const queueIds = queues.map((q) => q.id);
 		const filteredTickets = tickets.filter((t) => queueIds.indexOf(t.queueId) > -1);
 
@@ -192,15 +192,7 @@ const TicketsList = (props) => {
 			dispatch({ type: "LOAD_TICKETS", payload: tickets });
 		}
 	}, [tickets, status, searchParam, queues, profile]);
-*/
-   useEffect(() => {
-	if (!status && !searchParam) return;
-	const queueIds = queues.map((q) => q.id);
-	const filteredTickets = tickets.filter((t) => queueIds.indexOf(t.queueId) > -1);
-		dispatch({ type: "LOAD_TICKETS", payload: filteredTickets });
-}, [tickets, status, searchParam, queues, profile]);
-	
-	
+
   useEffect(() => {
     const socket = openSocket();
 
